@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CPWQldL/Luro7xxHO42J07oZ3S14xrrqLgG1OkGhTq4LWdpK0kPVHjlOGYWAYQYE0D0TyPNZPtA6PWiXDA1i6Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dani\\source\\repos\\ShoesScraper\\ShoesScraper\\ShoesScraper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dani\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512"
+  ],
+  "logs": []
+}
