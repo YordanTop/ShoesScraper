@@ -126,7 +126,7 @@ namespace ShoesScraper
         {
             var frame = new Panel();
             var iconPanel = new Panel();
-            var price = new Label();
+            var description = new Label();
             var hearthIcon = new PictureBox();
             var infoIcon = new PictureBox();
             var itemPicture = new PictureBox();
@@ -142,7 +142,7 @@ namespace ShoesScraper
                 frame.BorderStyle = BorderStyle.FixedSingle;
                 frame.Controls.Add(iconPanel);
                 frame.Controls.Add(itemPicture);
-                frame.Controls.Add(price);
+                frame.Controls.Add(description);
 
 
                 iconPanel.Height = 30;
@@ -167,6 +167,7 @@ namespace ShoesScraper
                 infoIcon.BackgroundImageLayout = ImageLayout.Zoom;
                 infoIcon.Location = new Point(25, 3);
                 infoIcon.Size = new Size(23, 23);
+                infoIcon.Click += InfoIcon_Click;
 
                 itemPicture.Load(item.Img);
                 itemPicture.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -175,10 +176,10 @@ namespace ShoesScraper
                 itemPicture.Location = new Point(10, 0);
                 itemPicture.Size = new Size(120, 120);
 
-                price.Text = "Description: " + item.Price;
-                price.Font = new Font("Segoe UI Symbol", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-                price.Dock = DockStyle.Fill;
-                price.Visible = false;
+                description.Text = "Description: " + item.Price;
+                description.Font = new Font("Segoe UI Symbol", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+                description.Dock = DockStyle.Fill;
+                description.Visible = false;
 
             });
 
@@ -212,6 +213,19 @@ namespace ShoesScraper
                     UserForm.products.Remove(frame);
                 }
 
+            }
+            void InfoIcon_Click(object? sender, EventArgs e)
+            {
+                if(itemPicture.Visible == true)
+                {
+                    itemPicture.Visible = false;
+                    description.Visible = true;
+                }
+                else
+                {
+                    description.Visible = false;
+                    itemPicture.Visible = true;
+                }
             }
 
         }
